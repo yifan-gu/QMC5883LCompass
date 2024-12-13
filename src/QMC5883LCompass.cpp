@@ -150,9 +150,7 @@ void QMC5883LCompass::setSmoothing(byte steps, bool adv){
 void QMC5883LCompass::calibrate() {
 	clearCalibration();
 	long calibrationData[3][2] = {{65000, -65000}, {65000, -65000}, {65000, -65000}};
-  	long	x = calibrationData[0][0] = calibrationData[0][1] = getX();
-  	long	y = calibrationData[1][0] = calibrationData[1][1] = getY();
-  	long	z = calibrationData[2][0] = calibrationData[2][1] = getZ();
+  	long x, y, z;
 
 	unsigned long startTime = millis();
 
